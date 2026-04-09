@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Kallu Baby 🎉</title>
+
+  <!-- Handwritten Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .card {
+      margin-top: 40px;
+      background: rgba(0,0,0,0.3);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 { font-size: 2.3rem; }
+
+    #message {
+      font-size: 1.1rem;
+      margin: 15px 0;
+      min-height: 80px;
+      white-space: pre-line;
+    }
+
+    .slideshow {
+      width: 100%;
+      height: 260px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      aspect-ratio: 4 / 5;
+    }
+
+    .slides {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      transform: scale(1.05);
+      transition: opacity 0.8s ease-in-out, transform 3s ease-in-out;
+    }
+
+    .slides.active {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff6f61;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 20px;
+      animation: floatUp 5s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .letter-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px 60px;
+    }
+
+    #paper {
+      max-width: 700px;
+      width: 95%;
+      padding: 40px 30px;
+      border-radius: 12px;
+      color: #3b2f2f;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      transform: rotateX(90deg);
+      transform-origin: top;
+      transition: transform 1s ease;
+
+      /* Paper style */
+      background: linear-gradient(#fffdf5, #f7ecd9);
+      border: 1px solid #e6d3a3;
+
+      font-family: 'Dancing Script', cursive;
+      line-height: 1.9;
+      font-size: 1.4rem;
+    }
+
+    #letter {
+      white-space: pre-line;
+      font-size: 1.4rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Happy Birthday Kallu Baby ❤️</h1>
+
+    <p id="message"></p>
+
+    <div class="slideshow">
+      <img class="slides active" src="photo1.jpeg">
+      <img class="slides" src="photo2.jpeg">
+      <img class="slides" src="photo3.jpeg">
+      <img class="slides" src="photo4.jpeg">
+      <img class="slides" src="photo5.jpeg">
+      <img class="slides" src="photo6.jpeg">
+      <img class="slides" src="photo7.jpeg">
+      <img class="slides" src="photo8.jpeg">
+      <img class="slides" src="photo9.jpeg">
+    </div>
+
+    <button onclick="playMusic()">Play Surprise 🎶</button>
+  </div>
+
+  <div class="letter-wrap">
+    <div id="paper">
+      <h2 style="text-align:center;">💌 A Letter For You</h2>
+      <p id="letter"></p>
+    </div>
+  </div>
+
+  <audio id="music" src="song.mp3"></audio>
+
+  <script>
+    function playMusic() {
+      document.getElementById('music').play();
+    }
+
+    const text = `Happy Birthday my Kallu baby ❤️
+You are the most special person in our life.
+Every moment with you feels like magic ✨
+We so lucky to have you 💖
+Stay happy always... WE love you so much ❤️`;
+
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("message").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      }
+    }
+    typeWriter();
+
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].classList.add("active");
+      setTimeout(showSlides, 3000);
+    }
+
+    const letterText = `OUR Love ❤️
+
+On your special day, I just want to tell you how much you mean to me.
+You are the reason behind my smile, my happiness, and my peace.
+Every moment with you is a memory I cherish deeply.
+
+Okay now this was from both of us from vishi and me Ata i will take over from
+here 😁
+This Your Kashu Speaking I'm a very emotional guy and you know that really well 😁.
+So when it comes to these kind of thinks u will find me way to senti so bare with me,
+I'm really glad that we meet and we click so good i never had such great bond with anyone
+and especially when it comes to girls I am not good at all 😅... so moving on I'm still mad at 
+you that when we first meet i had to ask to meet rather that u didn't even told me that u
+were coming to India Iska Badla tho Jaur Lunga but anyways this is getting really 
+difficuly for me to put it words all i can say it how important You are to ME 
+I Have Awlays Called you as "MY PERSON"
+Just want you to be happy and want to see smile and call me "Aye Lawada Ja Na😂😂😂" 
+I promise to always stand by your side, to support you, and to love you endlessly.
+And The Last Line from Yours Truely Vishi...
+You are not just my partner, you are my everything 💖
+
+Happy Birthday once again ❤️
+
+With all our love,
+Kashu & Vishi 💌`;
+
+    let letterStarted = false;
+    let j = 0;
+
+    window.addEventListener("scroll", () => {
+      const paper = document.getElementById("paper");
+      const rect = paper.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight - 100) {
+        paper.style.transform = "rotateX(0deg)";
+        if (!letterStarted) {
+          letterStarted = true;
+          typeLetter();
+        }
+      }
+    });
+
+    function typeLetter() {
+      if (j < letterText.length) {
+        document.getElementById("letter").innerHTML += letterText.charAt(j);
+        j++;
+        setTimeout(typeLetter, 30);
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => { heart.remove(); }, 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
